@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "api/shortened_links";
+
+service shortenedLinks {
+  rpc SaveLink(OriginalLink) returns (ShortenedLink) {}
+  rpc GetLink(ShortenedLink) returns (OriginalLink) {}
+}
+
+message OriginalLink {
+  string message = 1;
+}
+
+message ShortenedLink {
+  string message = 1;
+}
